@@ -13,6 +13,7 @@
           mkShell {
             packages = [
               ruby
+              flyctl
             ];
 
             # Keep gems installed in a subdirectory
