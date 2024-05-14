@@ -36,5 +36,6 @@ COPY --from=build --chown=ruby:ruby /app /app
 COPY --chown=ruby:ruby . .
 
 # Start the server
-EXPOSE 8080
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "--port", "8080"]
+EXPOSE 4567
+ENV APP_ENV=production
+CMD ["bundle", "exec", "ruby", "app.rb"]
