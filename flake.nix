@@ -18,6 +18,9 @@
 
             # Keep gems installed in a subdirectory
             BUNDLE_PATH = "./vendor/bundle";
+
+            # Development database
+            DATABASE_URL = "sqlite://db/data.sqlite3";
         };
       });
 }

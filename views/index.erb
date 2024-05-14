@@ -1,5 +1,57 @@
 <!doctype html>
 <html>
-<h1>Hello NDSM!</h1>
-<p>This is the birthday bonanza app.</p>
+<head>
+  <link rel="stylesheet" href="pico.violet.css" />
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul><li><h1>Hello NDSM! 👋</h1></li></ul>
+      <ul><li><h3>This is the <em>birthday bonanza</em> app 🎂</h3></li></ul>
+    </nav>
+    <article>
+      <h3>Students</h3>
+      <p>Here are the <%= @students.length %> students whose birthdays we know.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th><th>Birthday</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td><%= student[:name] %></td>
+            <td><%= student[:birthday] %></td>
+            <td>
+              <form method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="student_id" value="<%= student[:id] %>">
+                <button type="submit" class="outline">❌</button>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+        <tbody>
+      </table>
+    </article>
+    <article>
+      <h3>Add Student</h3>
+      <form method="post">
+        <fieldset>
+          <label>
+            First name
+            <input name="name" placeholder="First name" />
+          </label>
+          <label>
+            Birthday
+            <input type="date" name="birthday" placeholder="Birthday" />
+          </label>
+        </fieldset>
+
+        <input type="submit" value="Save" />
+      </form>
+    </article>
+  </main>
+</body>
 </html>
