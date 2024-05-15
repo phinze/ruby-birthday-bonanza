@@ -7,6 +7,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    moments (0.3.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.3)
@@ -43,6 +44,7 @@ PLATFORMS
   arm64-darwin-23
 
 DEPENDENCIES
+  moments (~> 0.3.0)
   puma (~> 6.4)
   rackup (~> 2.1)
   rerun (~> 0.14.0)

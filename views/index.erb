@@ -50,9 +50,15 @@
             <input type="date" name="birthday" placeholder="Birthday" />
           </label>
         </fieldset>
-
         <input type="submit" value="Save" />
       </form>
+    </article>
+    <article>
+      <h3>Birthdays</h3>
+      <ul>
+      <% @students.each_cons(2) do |a, b| %>
+        <li><%= a[:name] %>'s birthday is <%= Moments.difference(a[:birthday], b[:birthday]).humanized %> after <%= b[:name] %>'s</li>
+      <% end %>
     </article>
   </main>
 </body>
