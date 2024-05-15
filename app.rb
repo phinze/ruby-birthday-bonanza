@@ -11,7 +11,7 @@ DB.create_table?(:students) do
 end
 
 get "/" do
-  @students = DB[:students].all
+  @students = DB[:students].order(Sequel.desc(:birthday)).all
   erb :index
 end
 
